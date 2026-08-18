@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { Container } from '@chakra-ui/react'
 
@@ -17,37 +18,51 @@ import Footer from './components/Footer'
 import HouseProvider from './context/HouseContext';
 import HouseDetails from './components/PropertyDetails/HouseDetails';
 import WhatsAppFloat from './components/WhatsAppFloat';
+import LandingPage from './components/LandingPage';
 
 const App = () => {
+  // Show landing page only once per session
+  const [showLanding, setShowLanding] = useState(
+    !sessionStorage.getItem('landing_seen')
+  );
+
+  const handleEnter = () => {
+    sessionStorage.setItem('landing_seen', '1');
+    setShowLanding(false);
+  };
+
   return (
-    <HouseProvider>
-      <Container maxW='container.lg' px='6'>
-        <Header />
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='property-details' element={ <PropertyDetails /> } >
-            <Route path=":propertyId" element={<HouseDetails />} />
-          </Route>
-          <Route path='/signup' element={<SignUp />} />
-          <Route path='/contact' element={<Contact />} />
-          <Route path='/features' element={<Features />} />
-          <Route path='/about' element={<AboutUs />} />
-          <Route path='/emi-calculator' element={<EMICalculator />} />
-          <Route path='/blog' element={<Blog />} />
-          <Route path='/faq' element={<FAQ />} />
-          <Route path='/privacy-policy' element={<PrivacyPolicy />} />
-          <Route path='/terms' element={<Terms />} />
-          <Route path="*"
-                element={ <main style={{ padding: "1rem" }}>
-                            <p>There's nothing here!</p>
-                          </main>
-                        }
-          />
-        </Routes>
-      </Container>
-      <Footer />
-      <WhatsAppFloat />
-    </HouseProvider>
+    <>
+      {showLanding && <LandingPage onEnter={handleEnter} />}
+      <HouseProvider>
+        <Container maxW='container.lg' px='6'>
+          <Header />
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='property-details' element={ <PropertyDetails /> } >
+              <Route path=":propertyId" element={<HouseDetails />} />
+            </Route>
+            <Route path='/signup' element={<SignUp />} />
+            <Route path='/contact' element={<Contact />} />
+            <Route path='/features' element={<Features />} />
+            <Route path='/about' element={<AboutUs />} />
+            <Route path='/emi-calculator' element={<EMICalculator />} />
+            <Route path='/blog' element={<Blog />} />
+            <Route path='/faq' element={<FAQ />} />
+            <Route path='/privacy-policy' element={<PrivacyPolicy />} />
+            <Route path='/terms' element={<Terms />} />
+            <Route path="*"
+                  element={ <main style={{ padding: "1rem" }}>
+                              <p>There's nothing here!</p>
+                            </main>
+                          }
+            />
+          </Routes>
+        </Container>
+        <Footer />
+        <WhatsAppFloat />
+      </HouseProvider>
+    </>
   )
 }
 
