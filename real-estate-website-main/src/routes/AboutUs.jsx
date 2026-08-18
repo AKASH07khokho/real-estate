@@ -7,8 +7,11 @@ import {
   Divider,
   Icon,
   SimpleGrid,
+  Image,
+  Badge,
 } from '@chakra-ui/react';
 import { BiPhone, BiEnvelope, BiMap, BiGlobe, BiBuildings, BiGroup } from 'react-icons/bi';
+import MDPhoto from '../assets/images/agents/md_radhakrishnan.jpg';
 
 const AboutUs = () => {
   return (
@@ -61,42 +64,98 @@ const AboutUs = () => {
         </Box>
       </SimpleGrid>
 
-      {/* Managing Director */}
+      {/* Managing Director — Premium Card */}
       <Box
         bg='white'
         border='1px'
         borderColor='pink.100'
         borderRadius='xl'
-        boxShadow='lg'
+        boxShadow='xl'
         p={{ base: '6', md: '8' }}
+        overflow='hidden'
+        position='relative'
       >
-        <Heading size='md' color='pink.800' mb='4'>
+        {/* Decorative top bar */}
+        <Box
+          position='absolute'
+          top='0' left='0' right='0'
+          h='4px'
+          bgGradient='linear(to-r, pink.400, pink.700)'
+        />
+
+        <Heading size='md' color='pink.800' mb='6'>
           Leadership
         </Heading>
-        <Box bg='pink.50' p='6' borderRadius='lg'>
-          <Heading size='md' color='pink.700'>V. Radhakrishnan</Heading>
-          <Text fontSize='sm' color='gray.600' mb='4'>Managing Director</Text>
-          <VStack align='left' spacing='3'>
-            <HStack>
-              <Icon as={BiPhone} color='pink.600' boxSize='5' />
-              <Text fontSize='md'>90473 35599</Text>
-            </HStack>
-            <HStack>
-              <Icon as={BiEnvelope} color='pink.600' boxSize='5' />
-              <Text fontSize='md'>info@nimihousing.com</Text>
-            </HStack>
-            <HStack>
-              <Icon as={BiGlobe} color='pink.600' boxSize='5' />
-              <Text fontSize='md'>www.nimihousing.com</Text>
-            </HStack>
-            <HStack align='flex-start'>
-              <Icon as={BiMap} color='pink.600' boxSize='5' mt='1' />
-              <Text fontSize='md'>
-                No.70/16, Sundarbans Ground Floor, 1st Avenue, Ashok Nagar, Chennai - 600 083
-              </Text>
-            </HStack>
-          </VStack>
-        </Box>
+
+        <HStack
+          align='flex-start'
+          spacing={{ base: '4', md: '8' }}
+          flexDir={{ base: 'column', md: 'row' }}
+        >
+          {/* MD Photo */}
+          <Box flexShrink={0} textAlign='center'>
+            <Image
+              src={MDPhoto}
+              alt='V. Radhakrishnan - Managing Director'
+              borderRadius='xl'
+              objectFit='cover'
+              w={{ base: '160px', md: '200px' }}
+              h={{ base: '200px', md: '240px' }}
+              boxShadow='lg'
+              border='3px solid'
+              borderColor='pink.100'
+            />
+            <Badge
+              mt='3'
+              colorScheme='pink'
+              fontSize='0.75em'
+              px='3'
+              py='1'
+              borderRadius='full'
+            >
+              Managing Director
+            </Badge>
+          </Box>
+
+          {/* MD Info */}
+          <Box flex='1'>
+            <Heading size='lg' color='pink.700' mb='1'>
+              V. Radhakrishnan
+            </Heading>
+            <Text fontSize='sm' color='gray.500' mb='5' fontStyle='italic'>
+              Founder &amp; Managing Director, NIMI Housing
+            </Text>
+
+            <Text fontSize='md' color='gray.700' lineHeight='tall' mb='5'>
+              With years of experience in the real estate sector, Mr. V. Radhakrishnan has 
+              guided NIMI Housing to become one of Chennai's most trusted property development 
+              firms. His commitment to transparency, customer-first approach, and deep knowledge 
+              of Tamil Nadu's real estate landscape has helped thousands of families and investors 
+              fulfil their property dreams.
+            </Text>
+
+            <VStack align='flex-start' spacing='3'>
+              <HStack>
+                <Icon as={BiPhone} color='pink.600' boxSize='5' />
+                <Text fontSize='md' fontWeight='semibold'>90473 35599</Text>
+              </HStack>
+              <HStack>
+                <Icon as={BiEnvelope} color='pink.600' boxSize='5' />
+                <Text fontSize='md'>info@nimihousing.com</Text>
+              </HStack>
+              <HStack>
+                <Icon as={BiGlobe} color='pink.600' boxSize='5' />
+                <Text fontSize='md'>www.nimihousing.com</Text>
+              </HStack>
+              <HStack align='flex-start'>
+                <Icon as={BiMap} color='pink.600' boxSize='5' mt='1' />
+                <Text fontSize='md'>
+                  No.70/16, Sundarbans Ground Floor, 1st Avenue, Ashok Nagar, Chennai - 600 083
+                </Text>
+              </HStack>
+            </VStack>
+          </Box>
+        </HStack>
       </Box>
 
       {/* Mission */}

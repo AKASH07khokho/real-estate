@@ -35,6 +35,8 @@ import House12Lg from './assets/images/houses/house12lg.png';
 import Agent1 from './assets/images/agents/agent1.png';
 import Agent2 from './assets/images/agents/agent2.png';
 import Agent3 from './assets/images/agents/agent3.png';
+import MDRadhakrishnan from './assets/images/agents/md_radhakrishnan.jpg';
+
 
 export const housesData = [
   {
@@ -56,7 +58,7 @@ export const housesData = [
     status: 'Ready',
     amenities: ['Water Connection', 'Electricity', 'Road Access', 'Drainage'],
     agent: {
-      image: Agent1,
+      image: MDRadhakrishnan,
       name: 'V. Radhakrishnan',
       phone: '90473 35599',
     },
@@ -80,7 +82,7 @@ export const housesData = [
     status: 'Ready',
     amenities: ['Metro Nearby', 'Water Connection', 'Electricity', 'Park'],
     agent: {
-      image: Agent1,
+      image: MDRadhakrishnan,
       name: 'V. Radhakrishnan',
       phone: '90473 35599',
     },
@@ -104,7 +106,7 @@ export const housesData = [
     status: 'Ready',
     amenities: ['Main Road', 'IT Parks Nearby', 'Bus Stop', 'High Visibility'],
     agent: {
-      image: Agent1,
+      image: MDRadhakrishnan,
       name: 'V. Radhakrishnan',
       phone: '90473 35599',
     },
@@ -128,7 +130,7 @@ export const housesData = [
     status: 'Ready',
     amenities: ['Gated Community', '24/7 Security', 'Park', 'Clubhouse'],
     agent: {
-      image: Agent1,
+      image: MDRadhakrishnan,
       name: 'V. Radhakrishnan',
       phone: '90473 35599',
     },
@@ -152,7 +154,7 @@ export const housesData = [
     status: 'Ready',
     amenities: ['Water Source', 'Road Access', 'Electricity', 'Fencing'],
     agent: {
-      image: Agent1,
+      image: MDRadhakrishnan,
       name: 'V. Radhakrishnan',
       phone: '90473 35599',
     },
@@ -176,7 +178,7 @@ export const housesData = [
     status: 'Under Development',
     amenities: ['Beach Nearby', 'Gated Community', 'Landscaping', 'Club House'],
     agent: {
-      image: Agent1,
+      image: MDRadhakrishnan,
       name: 'V. Radhakrishnan',
       phone: '90473 35599',
     },
@@ -200,7 +202,7 @@ export const housesData = [
     status: 'Ready',
     amenities: ['Bus Stop', 'Railway Station', 'Market', 'School'],
     agent: {
-      image: Agent1,
+      image: MDRadhakrishnan,
       name: 'V. Radhakrishnan',
       phone: '90473 35599',
     },
@@ -224,7 +226,7 @@ export const housesData = [
     status: 'Ready',
     amenities: ['Main Road', 'Parking', 'High Footfall', 'Metro Nearby'],
     agent: {
-      image: Agent1,
+      image: MDRadhakrishnan,
       name: 'V. Radhakrishnan',
       phone: '90473 35599',
     },
@@ -248,7 +250,7 @@ export const housesData = [
     status: 'Ready',
     amenities: ['Lake View', 'IT Park Nearby', 'School', 'Hospital'],
     agent: {
-      image: Agent1,
+      image: MDRadhakrishnan,
       name: 'V. Radhakrishnan',
       phone: '90473 35599',
     },
@@ -272,7 +274,7 @@ export const housesData = [
     status: 'Ready',
     amenities: ['NH Access', 'Village Nearby', 'Water', 'Electricity'],
     agent: {
-      image: Agent1,
+      image: MDRadhakrishnan,
       name: 'V. Radhakrishnan',
       phone: '90473 35599',
     },
@@ -296,7 +298,7 @@ export const housesData = [
     status: 'Ready',
     amenities: ['Hospital Nearby', 'School', 'Bus Route', 'Airport Access'],
     agent: {
-      image: Agent1,
+      image: MDRadhakrishnan,
       name: 'V. Radhakrishnan',
       phone: '90473 35599',
     },
@@ -320,7 +322,7 @@ export const housesData = [
     status: 'Ready',
     amenities: ['University Nearby', 'GST Road', 'Bus Stop', 'Market'],
     agent: {
-      image: Agent1,
+      image: MDRadhakrishnan,
       name: 'V. Radhakrishnan',
       phone: '90473 35599',
     },

@@ -21,7 +21,8 @@ import WhatsAppFloat from './components/WhatsAppFloat';
 import LandingPage from './components/LandingPage';
 
 const App = () => {
-  // Show landing page only once per session
+  // Show landing every time the browser is freshly opened
+  // (uses sessionStorage so it only shows once per tab session)
   const [showLanding, setShowLanding] = useState(
     !sessionStorage.getItem('landing_seen')
   );
@@ -33,13 +34,15 @@ const App = () => {
 
   return (
     <>
+      {/* 3D Animated Landing Page — auto-transitions to Home after 5s */}
       {showLanding && <LandingPage onEnter={handleEnter} />}
+
       <HouseProvider>
         <Container maxW='container.lg' px='6'>
           <Header />
           <Routes>
             <Route path='/' element={<Home />} />
-            <Route path='property-details' element={ <PropertyDetails /> } >
+            <Route path='property-details' element={<PropertyDetails />}>
               <Route path=":propertyId" element={<HouseDetails />} />
             </Route>
             <Route path='/signup' element={<SignUp />} />
@@ -51,11 +54,13 @@ const App = () => {
             <Route path='/faq' element={<FAQ />} />
             <Route path='/privacy-policy' element={<PrivacyPolicy />} />
             <Route path='/terms' element={<Terms />} />
-            <Route path="*"
-                  element={ <main style={{ padding: "1rem" }}>
-                              <p>There's nothing here!</p>
-                            </main>
-                          }
+            <Route
+              path="*"
+              element={
+                <main style={{ padding: '1rem' }}>
+                  <p>There's nothing here!</p>
+                </main>
+              }
             />
           </Routes>
         </Container>
@@ -63,7 +68,7 @@ const App = () => {
         <WhatsAppFloat />
       </HouseProvider>
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;
