@@ -11,7 +11,7 @@ import { theme } from './Theme';
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <ChakraProvider theme={theme}>
-      <BrowserRouter>
+      <BrowserRouter basename="/real-estate">
         <App />
       </BrowserRouter>
     </ChakraProvider>
