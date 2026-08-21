@@ -1,7 +1,8 @@
-import { Text, Box, VStack, HStack, SimpleGrid, Heading, Icon, Divider, useColorModeValue } from '@chakra-ui/react';
+import { Text, Box, VStack, HStack, SimpleGrid, Heading, Icon, Divider, useColorModeValue, Image } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 import { BiPhone, BiEnvelope, BiMap, BiGlobe } from 'react-icons/bi';
 import { FaWhatsapp, FaInstagram, FaFacebook } from 'react-icons/fa';
+import LogoImg from '../assets/images/logo.jpg';
 
 const Footer = () => {
   const footerBg = useColorModeValue('gray.800', 'gray.900');
@@ -12,9 +13,9 @@ const Footer = () => {
         <SimpleGrid columns={{ base: 1, md: 3 }} spacing='8' mb='8'>
           {/* Company Info */}
           <VStack align='left' spacing='3'>
-            <Heading size='md' bgGradient='linear(to-r, pink.300, pink.500)' bgClip='text'>
-              NIMI HOUSING
-            </Heading>
+            <Box bg='white' p='2' borderRadius='xl' display='inline-block' maxW='230px'>
+              <Image src={LogoImg} alt='NIMI HOUSING Logo' h='48px' objectFit='contain' />
+            </Box>
             <Text fontSize='xs' color='gray.400'>
               NIMI Housing and Property Development Pvt Ltd
             </Text>
@@ -69,7 +70,7 @@ const Footer = () => {
         <Divider borderColor='gray.700' />
         <Text fontSize='xs' color='gray.500' textAlign='center' mt='6'>
           © {new Date().getFullYear()} NIMI HOUSING AND PROPERTY DEVELOPMENT PVT LTD. All rights reserved.
-          <br />V. Radhakrishnan, Managing Director
+          <br />S. V. Radhakrishnan, Managing Director
         </Text>
       </Box>
     </Box>

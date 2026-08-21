@@ -33,7 +33,7 @@ const Contact = () => {
 
           <Box bg='pink.50' p='6' borderRadius='lg'>
             <Text fontWeight='bold' fontSize='lg' color='pink.800' mb='1'>
-              V. Radhakrishnan
+              S. V. Radhakrishnan
             </Text>
             <Text fontSize='sm' color='gray.600'>
               Managing Director

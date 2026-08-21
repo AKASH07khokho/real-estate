@@ -31,14 +31,12 @@ const LandingPage = ({ onEnter }) => {
       color: Math.random() > 0.5 ? '#d4af37' : '#ffffff',
     }));
 
-    // 3D Buildings data
-    const buildings = [
-      { x: 0.08, baseY: 1, w: 0.07, h: 0.55, depth: 0.03, color: '#1a2340', accent: '#d4af37' },
-      { x: 0.16, baseY: 1, w: 0.06, h: 0.70, depth: 0.025, color: '#0f1829', accent: '#c0a830' },
-      { x: 0.23, baseY: 1, w: 0.08, h: 0.45, depth: 0.035, color: '#162035', accent: '#d4af37' },
-      { x: 0.70, baseY: 1, w: 0.08, h: 0.50, depth: 0.03, color: '#1a2340', accent: '#d4af37' },
-      { x: 0.79, baseY: 1, w: 0.06, h: 0.72, depth: 0.025, color: '#0f1829', accent: '#c0a830' },
-      { x: 0.86, baseY: 1, w: 0.07, h: 0.42, depth: 0.03, color: '#162035', accent: '#d4af37' },
+    // 3D Land Plots data (flat, wider)
+    const plots = [
+      { x: 0.10, baseY: 1, w: 0.15, h: 0.05, depth: 0.08, color: '#2d4c1e', accent: '#4ade80' },
+      { x: 0.30, baseY: 1, w: 0.12, h: 0.03, depth: 0.10, color: '#1a3311', accent: '#22c55e' },
+      { x: 0.50, baseY: 1, w: 0.18, h: 0.06, depth: 0.07, color: '#3f6215', accent: '#84cc16' },
+      { x: 0.75, baseY: 1, w: 0.14, h: 0.04, depth: 0.09, color: '#2d4c1e', accent: '#4ade80' },
     ];
 
     let t = 0;
@@ -47,9 +45,9 @@ const LandingPage = ({ onEnter }) => {
 
       // Background gradient
       const bg = ctx.createLinearGradient(0, 0, 0, H);
-      bg.addColorStop(0, '#020b18');
-      bg.addColorStop(0.5, '#061428');
-      bg.addColorStop(1, '#0a1f3a');
+      bg.addColorStop(0, '#041006');
+      bg.addColorStop(0.5, '#0b2611');
+      bg.addColorStop(1, '#113516');
       ctx.fillStyle = bg;
       ctx.fillRect(0, 0, W, H);
 
@@ -79,76 +77,67 @@ const LandingPage = ({ onEnter }) => {
       ctx.lineTo(W, H * 0.78);
       ctx.stroke();
 
-      // Draw 3D buildings
-      buildings.forEach((b) => {
-        const bx = b.x * W;
-        const bw = b.w * W;
-        const bh = b.h * H;
-        const bd = b.depth * W;
+      // Draw 3D Land Plots
+      plots.forEach((p) => {
+        const bx = p.x * W;
+        const bw = p.w * W;
+        const bh = p.h * H;
+        const bd = p.depth * W;
         const by = H * 0.78;
         const topY = by - bh;
-        const sway = Math.sin(t * 0.008 + bx) * 1.5;
+        const sway = Math.sin(t * 0.005 + bx) * 0.5;
 
         // Side face (3D depth)
         ctx.beginPath();
         ctx.moveTo(bx + bw + sway, topY);
-        ctx.lineTo(bx + bw + bd + sway, topY - bd * 0.5);
-        ctx.lineTo(bx + bw + bd + sway, by - bd * 0.5);
+        ctx.lineTo(bx + bw + bd + sway, topY - bd * 0.4);
+        ctx.lineTo(bx + bw + bd + sway, by - bd * 0.4);
         ctx.lineTo(bx + bw + sway, by);
         ctx.closePath();
-        ctx.fillStyle = b.color.replace(')', ', 0.7)').replace('rgb', 'rgba');
         const sideGrd = ctx.createLinearGradient(bx + bw, 0, bx + bw + bd, 0);
-        sideGrd.addColorStop(0, 'rgba(30,50,80,0.9)');
-        sideGrd.addColorStop(1, 'rgba(10,25,50,0.6)');
+        sideGrd.addColorStop(0, 'rgba(30, 80, 40, 0.9)');
+        sideGrd.addColorStop(1, 'rgba(15, 50, 20, 0.6)');
         ctx.fillStyle = sideGrd;
         ctx.fill();
 
         // Front face
         const frontGrd = ctx.createLinearGradient(bx, topY, bx + bw, topY);
-        frontGrd.addColorStop(0, '#0d1e35');
-        frontGrd.addColorStop(0.5, '#162845');
-        frontGrd.addColorStop(1, '#0d1e35');
+        frontGrd.addColorStop(0, '#1c3d14');
+        frontGrd.addColorStop(0.5, '#2e5b22');
+        frontGrd.addColorStop(1, '#1c3d14');
         ctx.fillStyle = frontGrd;
         ctx.fillRect(bx + sway, topY, bw, bh);
 
-        // Windows grid
-        const cols = Math.floor(bw / 14);
-        const rows = Math.floor(bh / 18);
-        for (let r = 0; r < rows; r++) {
-          for (let c = 0; c < cols; c++) {
-            const wx = bx + sway + 6 + c * 14;
-            const wy = topY + 8 + r * 18;
-            const lit = Math.sin(t * 0.03 + r * 3 + c * 7 + bx) > 0.2;
-            if (lit) {
-              ctx.fillStyle = `rgba(255, 220, 100, ${Math.random() * 0.1 + 0.6})`;
-            } else {
-              ctx.fillStyle = 'rgba(10, 30, 60, 0.8)';
-            }
-            ctx.fillRect(wx, wy, 7, 10);
-          }
-        }
-
-        // Rooftop accent
-        ctx.strokeStyle = b.accent;
-        ctx.lineWidth = 2;
+        // Top face (Grass)
         ctx.beginPath();
         ctx.moveTo(bx + sway, topY);
+        ctx.lineTo(bx + bd + sway, topY - bd * 0.4);
+        ctx.lineTo(bx + bw + bd + sway, topY - bd * 0.4);
         ctx.lineTo(bx + bw + sway, topY);
+        ctx.closePath();
+        ctx.fillStyle = p.color;
+        ctx.fill();
+
+        // Accent border (Plot boundaries)
+        ctx.strokeStyle = p.accent;
+        ctx.lineWidth = 2;
         ctx.stroke();
 
-        // Antenna
-        ctx.strokeStyle = 'rgba(212,175,55,0.6)';
-        ctx.lineWidth = 1;
-        ctx.beginPath();
-        ctx.moveTo(bx + bw / 2 + sway, topY);
-        ctx.lineTo(bx + bw / 2 + sway, topY - 20);
-        ctx.stroke();
-        // Blinking light
-        if (Math.sin(t * 0.05 + bx) > 0) {
-          ctx.beginPath();
-          ctx.arc(bx + bw / 2 + sway, topY - 22, 2.5, 0, Math.PI * 2);
-          ctx.fillStyle = 'rgba(255,50,50,0.9)';
-          ctx.fill();
+        // Draw simple trees/plants on the plot
+        const numTrees = Math.floor(bw / 30);
+        for(let i=0; i<numTrees; i++) {
+            const tx = bx + sway + bd/2 + 10 + i * 25;
+            const ty = topY - bd*0.2;
+            
+            // Trunk
+            ctx.fillStyle = '#4a3018';
+            ctx.fillRect(tx - 2, ty - 15, 4, 15);
+            
+            // Leaves
+            ctx.beginPath();
+            ctx.arc(tx, ty - 20, 8, 0, Math.PI * 2);
+            ctx.fillStyle = '#22c55e';
+            ctx.fill();
         }
       });
 
@@ -213,20 +202,20 @@ const LandingPage = ({ onEnter }) => {
         {/* Top badge */}
         <div className="landing-badge">
           <span className="badge-dot" />
-          PREMIUM REAL ESTATE
+          NEW LAND PROPERTIES
         </div>
 
         {/* Main heading */}
         <h1 className="landing-title">
-          <span className="title-line1">NIMI HOUSING</span>
-          <span className="title-line2">&amp; Property</span>
-          <span className="title-line3">Development</span>
+          <span className="title-line1">NEW LAND</span>
+          <span className="title-line2">Properties</span>
+          <span className="title-line3">Available Now</span>
         </h1>
 
         {/* Subtitle */}
         <p className="landing-sub">
-          Where luxury meets vision. Discover your dream property<br />
-          crafted for the life you deserve.
+          Where luxury meets nature. Discover prime land properties<br />
+          ready for your dream project.
         </p>
 
         {/* Stats row */}
@@ -248,8 +237,14 @@ const LandingPage = ({ onEnter }) => {
         </div>
 
         {/* CTA Button */}
-        <button className="landing-cta" onClick={() => { setAnimStage(2); setTimeout(onEnter, 800); }}>
-          <span className="cta-text">Explore Properties</span>
+        <button className="landing-cta" onClick={() => { 
+          setAnimStage(2); 
+          setTimeout(() => {
+            onEnter();
+            window.location.href = '/signup';
+          }, 800); 
+        }}>
+          <span className="cta-text">Register Your Interest</span>
           <span className="cta-arrow">→</span>
           <div className="cta-shine" />
         </button>

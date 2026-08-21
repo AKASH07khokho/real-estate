@@ -1,7 +1,8 @@
-import { Flex, Heading, Button, HStack, chakra, ButtonGroup, useBreakpointValue, IconButton, useColorMode, useColorModeValue } from '@chakra-ui/react';
+import { Flex, Heading, Button, HStack, chakra, ButtonGroup, useBreakpointValue, IconButton, useColorMode, useColorModeValue, Image, Box } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 import { BiMoon, BiSun } from 'react-icons/bi';
 import NavMobile from './NavMobile';
+import LogoImg from '../../assets/images/logo.jpg';
 
 const Header = () => {
   const isDesktop = useBreakpointValue({ base: false, lg: true })
@@ -10,11 +11,11 @@ const Header = () => {
 
   return (
     <chakra.header id="header" borderBottom='1px solid' borderColor={useColorModeValue('gray.200', 'gray.700')} bg={headerBg} position='sticky' top='0' zIndex='100' backdropFilter='blur(10px)'>
-      <Flex w='100%' py='4' align='center' justify='space-between'>
+      <Flex w='100%' py='3' align='center' justify='space-between'>
         <Link to='/'>
-          <Heading fontSize={{ base: '2xl', md: '3xl' }} bgGradient='linear(to-r, pink.600, pink.400)' bgClip='text'>
-            NIMI HOUSING
-          </Heading>
+          <Box bg='white' p='1.5' borderRadius='lg' boxShadow='sm' display='inline-block' _hover={{ transform: 'scale(1.02)' }} transition='all 0.2s'>
+            <Image src={LogoImg} alt='NIMI HOUSING Logo' h={{ base: '42px', md: '52px' }} objectFit='contain' />
+          </Box>
         </Link>
         {
           isDesktop ? (

@@ -88,7 +88,7 @@ const CallToAction = () => {
         </HStack>
 
         <Text fontSize='xs' color='pink.200' mt='2'>
-          V. Radhakrishnan, Managing Director | NIMI Housing & Property Development Pvt Ltd
+          S. V. Radhakrishnan, Managing Director | NIMI Housing & Property Development Pvt Ltd
         </Text>
       </VStack>
     </Box>

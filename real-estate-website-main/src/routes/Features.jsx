@@ -91,7 +91,7 @@ const Features = () => {
           Ready to invest in land?
         </Heading>
         <Text fontSize='sm' color='gray.600'>
-          Contact V. Radhakrishnan at <strong>90473 35599</strong> or email us at <strong>info@nimihousing.com</strong>
+          Contact S. V. Radhakrishnan at <strong>90473 35599</strong> or email us at <strong>info@nimihousing.com</strong>
         </Text>
       </Box>
     </VStack>

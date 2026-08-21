@@ -39,7 +39,7 @@ const AboutUs = () => {
           their needs and budget.
         </Text>
         <Text fontSize='md' color='gray.700' lineHeight='tall'>
-          Under the leadership of our Managing Director, <strong>V. Radhakrishnan</strong>, we have 
+          Under the leadership of our Managing Director, <strong>S. V. Radhakrishnan</strong>, we have 
           built a reputation for transparency, legal compliance, and customer satisfaction. Our team 
           ensures that every property we offer is thoroughly verified and legally clear.
         </Text>
@@ -96,7 +96,7 @@ const AboutUs = () => {
           <Box flexShrink={0} textAlign='center'>
             <Image
               src={MDPhoto}
-              alt='V. Radhakrishnan - Managing Director'
+              alt='S. V. Radhakrishnan - Managing Director'
               borderRadius='xl'
               objectFit='cover'
               w={{ base: '160px', md: '200px' }}
@@ -120,14 +120,14 @@ const AboutUs = () => {
           {/* MD Info */}
           <Box flex='1'>
             <Heading size='lg' color='pink.700' mb='1'>
-              V. Radhakrishnan
+              S. V. Radhakrishnan
             </Heading>
             <Text fontSize='sm' color='gray.500' mb='5' fontStyle='italic'>
               Founder &amp; Managing Director, NIMI Housing
             </Text>
 
             <Text fontSize='md' color='gray.700' lineHeight='tall' mb='5'>
-              With years of experience in the real estate sector, Mr. V. Radhakrishnan has 
+              With years of experience in the real estate sector, Mr. S. V. Radhakrishnan has 
               guided NIMI Housing to become one of Chennai's most trusted property development 
               firms. His commitment to transparency, customer-first approach, and deep knowledge 
               of Tamil Nadu's real estate landscape has helped thousands of families and investors 

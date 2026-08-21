@@ -59,7 +59,7 @@ export const housesData = [
     amenities: ['Water Connection', 'Electricity', 'Road Access', 'Drainage'],
     agent: {
       image: MDRadhakrishnan,
-      name: 'V. Radhakrishnan',
+      name: 'S. V. Radhakrishnan',
       phone: '90473 35599',
     },
   },
@@ -83,7 +83,7 @@ export const housesData = [
     amenities: ['Metro Nearby', 'Water Connection', 'Electricity', 'Park'],
     agent: {
       image: MDRadhakrishnan,
-      name: 'V. Radhakrishnan',
+      name: 'S. V. Radhakrishnan',
       phone: '90473 35599',
     },
   },
@@ -107,7 +107,7 @@ export const housesData = [
     amenities: ['Main Road', 'IT Parks Nearby', 'Bus Stop', 'High Visibility'],
     agent: {
       image: MDRadhakrishnan,
-      name: 'V. Radhakrishnan',
+      name: 'S. V. Radhakrishnan',
       phone: '90473 35599',
     },
   },
@@ -131,7 +131,7 @@ export const housesData = [
     amenities: ['Gated Community', '24/7 Security', 'Park', 'Clubhouse'],
     agent: {
       image: MDRadhakrishnan,
-      name: 'V. Radhakrishnan',
+      name: 'S. V. Radhakrishnan',
       phone: '90473 35599',
     },
   },
@@ -155,7 +155,7 @@ export const housesData = [
     amenities: ['Water Source', 'Road Access', 'Electricity', 'Fencing'],
     agent: {
       image: MDRadhakrishnan,
-      name: 'V. Radhakrishnan',
+      name: 'S. V. Radhakrishnan',
       phone: '90473 35599',
     },
   },
@@ -179,7 +179,7 @@ export const housesData = [
     amenities: ['Beach Nearby', 'Gated Community', 'Landscaping', 'Club House'],
     agent: {
       image: MDRadhakrishnan,
-      name: 'V. Radhakrishnan',
+      name: 'S. V. Radhakrishnan',
       phone: '90473 35599',
     },
   },
@@ -203,7 +203,7 @@ export const housesData = [
     amenities: ['Bus Stop', 'Railway Station', 'Market', 'School'],
     agent: {
       image: MDRadhakrishnan,
-      name: 'V. Radhakrishnan',
+      name: 'S. V. Radhakrishnan',
       phone: '90473 35599',
     },
   },
@@ -227,7 +227,7 @@ export const housesData = [
     amenities: ['Main Road', 'Parking', 'High Footfall', 'Metro Nearby'],
     agent: {
       image: MDRadhakrishnan,
-      name: 'V. Radhakrishnan',
+      name: 'S. V. Radhakrishnan',
       phone: '90473 35599',
     },
   },
@@ -251,7 +251,7 @@ export const housesData = [
     amenities: ['Lake View', 'IT Park Nearby', 'School', 'Hospital'],
     agent: {
       image: MDRadhakrishnan,
-      name: 'V. Radhakrishnan',
+      name: 'S. V. Radhakrishnan',
       phone: '90473 35599',
     },
   },
@@ -275,7 +275,7 @@ export const housesData = [
     amenities: ['NH Access', 'Village Nearby', 'Water', 'Electricity'],
     agent: {
       image: MDRadhakrishnan,
-      name: 'V. Radhakrishnan',
+      name: 'S. V. Radhakrishnan',
       phone: '90473 35599',
     },
   },
@@ -299,7 +299,7 @@ export const housesData = [
     amenities: ['Hospital Nearby', 'School', 'Bus Route', 'Airport Access'],
     agent: {
       image: MDRadhakrishnan,
-      name: 'V. Radhakrishnan',
+      name: 'S. V. Radhakrishnan',
       phone: '90473 35599',
     },
   },
@@ -323,7 +323,7 @@ export const housesData = [
     amenities: ['University Nearby', 'GST Road', 'Bus Stop', 'Market'],
     agent: {
       image: MDRadhakrishnan,
-      name: 'V. Radhakrishnan',
+      name: 'S. V. Radhakrishnan',
       phone: '90473 35599',
     },
   },
@@ -341,7 +341,7 @@ export const testimonials = [
     name: 'Priya Sharma',
     location: 'Tambaram, Chennai',
     rating: 5,
-    text: 'I was looking for an affordable plot near Tambaram and NIMI Housing delivered exactly what I wanted. V. Radhakrishnan sir personally guided me through the documentation.',
+    text: 'I was looking for an affordable plot near Tambaram and NIMI Housing delivered exactly what I wanted. S. V. Radhakrishnan sir personally guided me through the documentation.',
   },
   {
     name: 'Rajesh Iyer',

@@ -1,8 +1,8 @@
 import { useRef } from 'react';
-
-import { VStack, Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerHeader, DrawerOverlay, Button, IconButton, useDisclosure, Center, Divider } from '@chakra-ui/react';
+import { VStack, Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerHeader, DrawerOverlay, Button, IconButton, useDisclosure, Center, Divider, Image, Box } from '@chakra-ui/react';
 import { FiMenu } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
+import LogoImg from '../../assets/images/logo.jpg';
 
 const NavMobile = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -19,8 +19,10 @@ const NavMobile = () => {
             <DrawerOverlay />
             <DrawerContent>
                 <DrawerCloseButton />
-                <Center>
-                <DrawerHeader>Menu</DrawerHeader>
+                <Center mt='4'>
+                  <Box bg='white' p='1.5' borderRadius='lg' boxShadow='sm'>
+                    <Image src={LogoImg} alt='NIMI HOUSING Logo' h='42px' objectFit='contain' />
+                  </Box>
                 </Center>
                 <DrawerBody px='10' mt='2'>
                     <VStack as='nav' spacing='5' alignItems='left'>
