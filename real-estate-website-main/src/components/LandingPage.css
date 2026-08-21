@@ -316,4 +316,32 @@
 @media (max-width: 600px) {
   .landing-stats { gap: 1.2rem; }
   .landing-cta { padding: 13px 28px; }
+  .landing-logo { height: 60px; }
+}
+
+/* ── Company Welcome ── */
+.landing-company-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 1.5rem;
+  animation: fadeUp 1s ease 0.6s both;
+}
+
+.landing-logo {
+  height: 80px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+  border: 2px solid rgba(255,255,255,0.1);
+}
+
+.company-name-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.15em;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+  margin: 0;
 }

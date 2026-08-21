@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import './LandingPage.css';
+import LogoImg from '../assets/images/logo.jpg';
 
 const LandingPage = ({ onEnter }) => {
   const canvasRef = useRef(null);
@@ -199,6 +200,12 @@ const LandingPage = ({ onEnter }) => {
       <canvas ref={canvasRef} className="landing-canvas" />
 
       <div className="landing-content">
+        {/* Company Header */}
+        <div className="landing-company-header">
+          <img src={LogoImg} alt="NIMI HOUSING Logo" className="landing-logo" />
+          <h2 className="company-name-title">Welcome to NIMI HOUSING</h2>
+        </div>
+
         {/* Top badge */}
         <div className="landing-badge">
           <span className="badge-dot" />
